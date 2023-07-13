@@ -58,6 +58,28 @@
             </li>
 
 
+            <li class="treeview {{ ($prefix == '/setups')? 'active': '' }}">
+                <a href="#">
+                    <i data-feather="mail"></i> <span>Setup Management</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('student.class.view') }}"><i class="ti-more"></i>Student Class/Учебный класс</a></li>
+                    <li><a href="{{ route('student.year.view') }}"><i class="ti-more"></i>Student Year/Учебный год</a></li>
+                    <li><a href="{{ route('student.group.view') }}"><i class="ti-more"></i>Student Group/Группа учеников</a></li>
+                    <li><a href="{{ route('student.shift.view') }}"><i class="ti-more"></i>Student Shift/Учебная смена</a></li>
+                    <li><a href="{{ route('free.category.view') }}"><i class="ti-more"></i>Free Category/Свободная категория</a></li>
+                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Free Category Amount/Количество свободных категорий</a></li>
+                    <li><a href="{{ route('exam.type.view') }}"><i class="ti-more"></i>Exam Type/Тип экзамена</a></li>
+                    <li><a href="{{ route('school.subject.view') }}"><i class="ti-more"></i>School Subject/Предмет</a></li>
+                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Assign Subject/Назначить предмет</a></li>
+                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Designation/Назначение</a></li>
+                   </ul>
+            </li>
+
+
 
             <li class="header nav-small-cap">User Interface</li>
 

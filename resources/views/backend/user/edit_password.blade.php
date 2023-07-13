@@ -64,7 +64,7 @@
                         <!-- /.row -->
                     </div>
                     <!-- /.box-body -->
-                </div>
+
                 <!-- /.box -->
 
             </section>
