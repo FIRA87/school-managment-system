@@ -11,8 +11,8 @@
                     <div class="col-12">
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">User list</h3>
-                                <a href="{{ route('users.add') }}" class="btn btn-rounded btn-success mt-5" style="float: right">Add User</a>
+                                <h3 class="box-title">Designation List</h3>
+                                <a href="{{ route('designation.add') }}" class="btn btn-rounded btn-success mt-5" style="float: right">Add Designation</a>
 
                             </div>
                             <!-- /.box-header -->
@@ -22,31 +22,21 @@
                                         <thead>
                                         <tr>
                                             <th width="5%">ID</th>
-                                            <th>Role</th>
                                             <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Code</th>
-                                            <th>Photo</th>
                                             <th width="25%">Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
 
-                                        @foreach($allData as  $key =>$user)
-                                        <tr>
-                                            <td>{{ $key+1 }}</td>
-                                            <td>{{ $user->role }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->code }}</td>
-                                            <td>
-                                                <img src="{{ asset('storage/'.$user->profile_photo_path) }}" alt="photo">
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('users.edit',$user->id) }}" class="btn btn-info">Edit</a>
-                                                <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger" id="delete">Delete</a>
-                                            </td>
-                                        </tr>
+                                        @foreach($allData as  $key =>$designation)
+                                            <tr>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $designation->name }}</td>
+                                                <td>
+                                                    <a href="{{ route('designation.edit',$designation->id) }}" class="btn btn-info">Edit</a>
+                                                    <a href="{{ route('designation.delete', $designation->id) }}" class="btn btn-danger" id="delete">Delete</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                         </tbody>
 

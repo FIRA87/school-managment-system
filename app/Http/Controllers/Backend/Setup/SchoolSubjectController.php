@@ -40,13 +40,11 @@ class SchoolSubjectController extends Controller
 
     public function schoolSubjectUpdate(Request $request, $id){
         $data = SchoolSubject::findOrFail($id);
-
         $validatedData = $request->validate([
             'name' => 'required|unique:school_subjects,name,'.$data->id,
         ]);
         $data->name = $request->name;
         $data->save();
-
         $notification = array(
             'message' => 'School Subject Updated successfully',
             'alert-type' => 'success'

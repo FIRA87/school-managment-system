@@ -29,6 +29,7 @@
                 </a>
             </li>
 
+            @if(Auth::user()->role =='Admin')
             <li class="treeview {{ ($prefix == '/users')? 'active': '' }}">
                 <a href="#">
                     <i data-feather="message-circle"></i>
@@ -42,6 +43,8 @@
                     <li><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
                 </ul>
             </li>
+            @endif
+
 
             <li class="treeview {{ ($prefix == '/profile')? 'active': '' }}">
                 <a href="#">
@@ -74,11 +77,30 @@
                     <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Free Category Amount/Количество свободных категорий</a></li>
                     <li><a href="{{ route('exam.type.view') }}"><i class="ti-more"></i>Exam Type/Тип экзамена</a></li>
                     <li><a href="{{ route('school.subject.view') }}"><i class="ti-more"></i>School Subject/Предмет</a></li>
-                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Assign Subject/Назначить предмет</a></li>
-                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Designation/Назначение</a></li>
+                    <li><a href="{{ route('assign.subject.view') }}"><i class="ti-more"></i>Assign Subject/Назначить предмет</a></li>
+                    <li><a href="{{ route('designation.view') }}"><i class="ti-more"></i>Designation/Назначение</a></li>
                    </ul>
             </li>
 
+
+
+
+            <li class="treeview {{ ($prefix == '/students')? 'active': '' }}">
+                <a href="#">
+                    <i data-feather="mail"></i> <span>Student Management</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('student.registration.view') }}"><i class="ti-more"></i>Student registration</a></li>
+                    <li><a href="{{ route('role.generate.view') }}"><i class="ti-more"></i>Role Generate</a></li>
+                    <li><a href="{{ route('registration.fee.view') }}"><i class="ti-more"></i>Registration Fee</a></li>
+                    <li><a href="{{ route('monthly.fee.view') }}"><i class="ti-more"></i>Monthly Fee </a></li>
+                    <li><a href="{{ route('exam.fee.view') }}"><i class="ti-more"></i>Exam Fee </a></li>
+
+                </ul>
+            </li>
 
 
             <li class="header nav-small-cap">User Interface</li>
